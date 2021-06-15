@@ -1,0 +1,10 @@
+//mockGameBoard[same][changes]; vert win
+//mockGameBoard[changes][same]; horiz win
+
+will fail if the second parameter evaluates to false
+assertTrue("This will succeed.", true);
+assertTrue("This will fail!", false);
+
+will fail if the second parameter evaluates to true
+assertFalse("This will succeed.", false);
+assertFalse("This will fail!", true);
