@@ -37,13 +37,14 @@
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.MainPackage" />
       <recent name="Tests" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.MainTest">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="com.MainPackage.Main" />
       <module name="TicTacToeGame" />
@@ -54,8 +55,24 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="MainTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="TicTacToeGame" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Tests" />
+      <option name="MAIN_CLASS_NAME" value="Tests.MainTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.MainTest" />
         <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
@@ -93,30 +110,34 @@
       <screen x="0" y="25" width="1280" height="727" />
     </state>
     <state x="378" y="168" key="#com.intellij.ide.util.PackageChooserDialog/0.25.1280.727@0.25.1280.727" timestamp="1623765564385" />
-    <state width="324" height="411" key="GridCell.Tab.0.bottom" timestamp="1623790165031">
-      <screen x="0" y="25" width="1280" height="728" />
+    <state width="569" height="428" key="GridCell.Tab.0.bottom" timestamp="1623860088857">
+      <screen x="0" y="25" width="1920" height="989" />
     </state>
     <state width="558" height="595" key="GridCell.Tab.0.bottom/0.25.1280.726@0.25.1280.726" timestamp="1623698716821" />
     <state width="185" height="600" key="GridCell.Tab.0.bottom/0.25.1280.727@0.25.1280.727" timestamp="1623765616346" />
     <state width="324" height="411" key="GridCell.Tab.0.bottom/0.25.1280.728@0.25.1280.728" timestamp="1623790165031" />
-    <state width="324" height="411" key="GridCell.Tab.0.center" timestamp="1623790165030">
-      <screen x="0" y="25" width="1280" height="728" />
+    <state width="569" height="428" key="GridCell.Tab.0.bottom/0.25.1920.989/1920.25.1680.1025@0.25.1920.989" timestamp="1623860088857" />
+    <state width="569" height="428" key="GridCell.Tab.0.center" timestamp="1623860088856">
+      <screen x="0" y="25" width="1920" height="989" />
     </state>
     <state width="558" height="595" key="GridCell.Tab.0.center/0.25.1280.726@0.25.1280.726" timestamp="1623698716820" />
     <state width="185" height="600" key="GridCell.Tab.0.center/0.25.1280.727@0.25.1280.727" timestamp="1623765616345" />
     <state width="324" height="411" key="GridCell.Tab.0.center/0.25.1280.728@0.25.1280.728" timestamp="1623790165030" />
-    <state width="324" height="411" key="GridCell.Tab.0.left" timestamp="1623790165030">
-      <screen x="0" y="25" width="1280" height="728" />
+    <state width="569" height="428" key="GridCell.Tab.0.center/0.25.1920.989/1920.25.1680.1025@0.25.1920.989" timestamp="1623860088856" />
+    <state width="569" height="428" key="GridCell.Tab.0.left" timestamp="1623860088855">
+      <screen x="0" y="25" width="1920" height="989" />
     </state>
     <state width="558" height="595" key="GridCell.Tab.0.left/0.25.1280.726@0.25.1280.726" timestamp="1623698716820" />
     <state width="185" height="600" key="GridCell.Tab.0.left/0.25.1280.727@0.25.1280.727" timestamp="1623765616345" />
     <state width="324" height="411" key="GridCell.Tab.0.left/0.25.1280.728@0.25.1280.728" timestamp="1623790165030" />
-    <state width="324" height="411" key="GridCell.Tab.0.right" timestamp="1623790165031">
-      <screen x="0" y="25" width="1280" height="728" />
+    <state width="569" height="428" key="GridCell.Tab.0.left/0.25.1920.989/1920.25.1680.1025@0.25.1920.989" timestamp="1623860088855" />
+    <state width="569" height="428" key="GridCell.Tab.0.right" timestamp="1623860088856">
+      <screen x="0" y="25" width="1920" height="989" />
     </state>
     <state width="558" height="595" key="GridCell.Tab.0.right/0.25.1280.726@0.25.1280.726" timestamp="1623698716821" />
     <state width="185" height="600" key="GridCell.Tab.0.right/0.25.1280.727@0.25.1280.727" timestamp="1623765616345" />
     <state width="324" height="411" key="GridCell.Tab.0.right/0.25.1280.728@0.25.1280.728" timestamp="1623790165031" />
+    <state width="569" height="428" key="GridCell.Tab.0.right/0.25.1920.989/1920.25.1680.1025@0.25.1920.989" timestamp="1623860088856" />
     <state x="105" y="25" key="SettingsEditor" timestamp="1623777711955">
       <screen x="0" y="25" width="1280" height="728" />
     </state>
@@ -125,10 +146,11 @@
       <screen x="0" y="25" width="1280" height="727" />
     </state>
     <state x="354" y="284" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.25.1280.727@0.25.1280.727" timestamp="1623765637033" />
-    <state x="412" y="113" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1623765606550">
-      <screen x="0" y="25" width="1280" height="727" />
+    <state x="802" y="216" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1623859692139">
+      <screen x="0" y="25" width="1920" height="989" />
     </state>
     <state x="412" y="113" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.25.1280.727@0.25.1280.727" timestamp="1623765606550" />
+    <state x="802" y="216" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.25.1920.989/1920.25.1680.1025@0.25.1920.989" timestamp="1623859692139" />
     <state x="344" y="25" key="refactoring.ChangeSignatureDialog" timestamp="1623775785222">
       <screen x="0" y="25" width="1280" height="728" />
     </state>

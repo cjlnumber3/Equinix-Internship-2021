@@ -4,17 +4,16 @@ import com.MainPackage.Main;
 import org.hamcrest.CoreMatchers;
 import org.junit.Before;
 import org.junit.BeforeClass;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
-
 import java.util.Scanner;
 
 import static org.junit.Assert.assertThat;
 import static org.junit.jupiter.api.Assertions.*;
 
-class Tests {
+class MainTest {
 
     @Test
     void runGame() {
@@ -24,7 +23,7 @@ class Tests {
     void playerMove() {
     }
 
-    @Test
+    @org.junit.Test
     void validMovement() {
         int numberOfGameBoardRows = 3;
         int numberOfGameBoardColumns = 3;
@@ -42,12 +41,6 @@ class Tests {
     }
 
     @Test
-    void getCellStatus() {
-
-    }
-
-
-    @Test
     void printGameBoard() {
         PrintStream original = System.out;
         String emptyVisualBoard = "   |   |   -----------   |   |   -----------   |   |   ";
@@ -63,7 +56,7 @@ class Tests {
     }
 
     @Test
-    public void clearGameBoard() {
+    void clearGameBoard() {
         int numberOfGameBoardRows = 3;
         int numberOfGameBoardColumns = 3;
         int emptyCell = 3;
@@ -76,7 +69,11 @@ class Tests {
     }
 
     @Test
-    public void printCell() {
+    void getCellStatus() {
+    }
+
+    @Test
+    void printCell() {
         PrintStream original = System.out;
 
         ByteArrayOutputStream newOutputForVoidXCell = new ByteArrayOutputStream();
@@ -156,7 +153,6 @@ class Tests {
 
     }
 
-
     @BeforeClass
     public static void printWelcomeBanner() throws Exception {
         System.out.println("Welcome to a game of Tic-Tac-Toe! (Player 1 is X, and Player 2 is O)");
@@ -168,14 +164,13 @@ class Tests {
     }
 
     @Test
-    public void initializeGame() {
+    void initializeGame() {
         Scanner scanner = new Scanner(System.in);
         assertTrue(scanner.hasNextLine(), "Error! You must press 'Enter' to initialize the game!");
     }
 
-
     @Test
-    public void printPlayerDirections() {
+    void printPlayerDirections() {
         PrintStream original = System.out;
 
         ByteArrayOutputStream newOutputForVoidMethodPlayer1 = new ByteArrayOutputStream();
