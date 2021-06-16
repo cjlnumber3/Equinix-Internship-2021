@@ -12,7 +12,7 @@ public class Main {
     public static int[][] gameBoard = new int[3][3];
 
 
-    private static int winningPlayer;
+    public static int winningPlayer;
 
 
 
@@ -47,7 +47,6 @@ public class Main {
     }
 
     public static void playerMove(int currentPlayer) {
-
 
         boolean validInput = false;
 
@@ -115,18 +114,25 @@ public class Main {
         return gameBoard[row][column];
     }
 
-    public static void printCell(int gamePiece) {
+    public static void printCell(int player) {
         final int emptyCell = 3;
         final int XCell = 1;
         final int OCell = 0;
 
 
-        switch (gamePiece) {
-            case emptyCell:  System.out.print("   "); break; //0
-            case OCell: System.out.print(" O "); break; //2
-            case XCell:  System.out.print(" X "); break; //1
+        switch (player) {
+            case emptyCell: {
+                System.out.print("   ");
+            } break; //0
+            case OCell: {
+                System.out.print(" O ");
+            } break; //2
+            case XCell:  {
+                System.out.print(" X ");
+            } break; //1
         }
     }
+
 
     public static boolean winConditions() {
 
@@ -229,10 +235,5 @@ public class Main {
             System.out.println(playerDirectionsString);
         }
     }
-
-
-
-
-
 
 }
