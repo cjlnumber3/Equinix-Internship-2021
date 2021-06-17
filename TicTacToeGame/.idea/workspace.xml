@@ -51,13 +51,13 @@
       <recent name="com.MainPackage" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="JUnit.MainTest.getCellStatus">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.MainPackage.Main" />
       <module name="TicTacToeGame" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.MainPackage.*" />
+          <option name="PATTERN" value="Tests.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -81,6 +81,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="MainTest.getCellStatus" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="TicTacToeGame" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Tests" />
+      <option name="MAIN_CLASS_NAME" value="Tests.MainTest" />
+      <option name="METHOD_NAME" value="getCellStatus" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="MainTest.printGameBoard" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="TicTacToeGame" />
       <extension name="coverage">
@@ -92,22 +108,6 @@
       <option name="PACKAGE_NAME" value="Tests" />
       <option name="MAIN_CLASS_NAME" value="Tests.MainTest" />
       <option name="METHOD_NAME" value="printGameBoard" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MainTest.printPlayerDirections" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="TicTacToeGame" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="Tests" />
-      <option name="MAIN_CLASS_NAME" value="Tests.MainTest" />
-      <option name="METHOD_NAME" value="printPlayerDirections(int,java.lang.String)" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -131,11 +131,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.MainTest.getCellStatus" />
         <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.MainTest.clearGameBoard" />
         <item itemvalue="JUnit.MainTest.printGameBoard" />
         <item itemvalue="JUnit.MainTest.validateInput" />
-        <item itemvalue="JUnit.MainTest.printPlayerDirections" />
       </list>
     </recent_temporary>
   </component>
@@ -179,38 +179,42 @@
     </state>
     <state x="378" y="168" key="#com.intellij.ide.util.PackageChooserDialog/0.25.1280.727@0.25.1280.727" timestamp="1623765564385" />
     <state x="567" y="220" key="#com.intellij.ide.util.PackageChooserDialog/0.25.1920.989/1920.25.1280.775@0.25.1920.989" timestamp="1623865138176" />
-    <state width="444" height="428" key="GridCell.Tab.0.bottom" timestamp="1623872844529">
+    <state width="345" height="847" key="GridCell.Tab.0.bottom" timestamp="1623946141017">
       <screen x="0" y="25" width="1920" height="989" />
     </state>
     <state width="558" height="595" key="GridCell.Tab.0.bottom/0.25.1280.726@0.25.1280.726" timestamp="1623698716821" />
     <state width="185" height="600" key="GridCell.Tab.0.bottom/0.25.1280.727@0.25.1280.727" timestamp="1623765616346" />
     <state width="324" height="411" key="GridCell.Tab.0.bottom/0.25.1280.728@0.25.1280.728" timestamp="1623790165031" />
-    <state width="444" height="428" key="GridCell.Tab.0.bottom/0.25.1920.989/1920.25.1280.775@0.25.1920.989" timestamp="1623872844529" />
+    <state width="345" height="847" key="GridCell.Tab.0.bottom/0.25.1920.989/1920.25.1280.775@0.25.1920.989" timestamp="1623946141017" />
     <state width="569" height="428" key="GridCell.Tab.0.bottom/0.25.1920.989/1920.25.1680.1025@0.25.1920.989" timestamp="1623861010173" />
-    <state width="444" height="428" key="GridCell.Tab.0.center" timestamp="1623872844528">
+    <state width="345" height="420" key="GridCell.Tab.0.bottom/0.25.1920.990/1920.25.1280.775@0.25.1920.990" timestamp="1623945431589" />
+    <state width="345" height="847" key="GridCell.Tab.0.center" timestamp="1623946141016">
       <screen x="0" y="25" width="1920" height="989" />
     </state>
     <state width="558" height="595" key="GridCell.Tab.0.center/0.25.1280.726@0.25.1280.726" timestamp="1623698716820" />
     <state width="185" height="600" key="GridCell.Tab.0.center/0.25.1280.727@0.25.1280.727" timestamp="1623765616345" />
     <state width="324" height="411" key="GridCell.Tab.0.center/0.25.1280.728@0.25.1280.728" timestamp="1623790165030" />
-    <state width="444" height="428" key="GridCell.Tab.0.center/0.25.1920.989/1920.25.1280.775@0.25.1920.989" timestamp="1623872844528" />
+    <state width="345" height="847" key="GridCell.Tab.0.center/0.25.1920.989/1920.25.1280.775@0.25.1920.989" timestamp="1623946141016" />
     <state width="569" height="428" key="GridCell.Tab.0.center/0.25.1920.989/1920.25.1680.1025@0.25.1920.989" timestamp="1623861010172" />
-    <state width="444" height="428" key="GridCell.Tab.0.left" timestamp="1623872844528">
+    <state width="345" height="420" key="GridCell.Tab.0.center/0.25.1920.990/1920.25.1280.775@0.25.1920.990" timestamp="1623945431588" />
+    <state width="345" height="847" key="GridCell.Tab.0.left" timestamp="1623946141015">
       <screen x="0" y="25" width="1920" height="989" />
     </state>
     <state width="558" height="595" key="GridCell.Tab.0.left/0.25.1280.726@0.25.1280.726" timestamp="1623698716820" />
     <state width="185" height="600" key="GridCell.Tab.0.left/0.25.1280.727@0.25.1280.727" timestamp="1623765616345" />
     <state width="324" height="411" key="GridCell.Tab.0.left/0.25.1280.728@0.25.1280.728" timestamp="1623790165030" />
-    <state width="444" height="428" key="GridCell.Tab.0.left/0.25.1920.989/1920.25.1280.775@0.25.1920.989" timestamp="1623872844528" />
+    <state width="345" height="847" key="GridCell.Tab.0.left/0.25.1920.989/1920.25.1280.775@0.25.1920.989" timestamp="1623946141015" />
     <state width="569" height="428" key="GridCell.Tab.0.left/0.25.1920.989/1920.25.1680.1025@0.25.1920.989" timestamp="1623861010171" />
-    <state width="444" height="428" key="GridCell.Tab.0.right" timestamp="1623872844529">
+    <state width="345" height="420" key="GridCell.Tab.0.left/0.25.1920.990/1920.25.1280.775@0.25.1920.990" timestamp="1623945431587" />
+    <state width="345" height="847" key="GridCell.Tab.0.right" timestamp="1623946141016">
       <screen x="0" y="25" width="1920" height="989" />
     </state>
     <state width="558" height="595" key="GridCell.Tab.0.right/0.25.1280.726@0.25.1280.726" timestamp="1623698716821" />
     <state width="185" height="600" key="GridCell.Tab.0.right/0.25.1280.727@0.25.1280.727" timestamp="1623765616345" />
     <state width="324" height="411" key="GridCell.Tab.0.right/0.25.1280.728@0.25.1280.728" timestamp="1623790165031" />
-    <state width="444" height="428" key="GridCell.Tab.0.right/0.25.1920.989/1920.25.1280.775@0.25.1920.989" timestamp="1623872844529" />
+    <state width="345" height="847" key="GridCell.Tab.0.right/0.25.1920.989/1920.25.1280.775@0.25.1920.989" timestamp="1623946141016" />
     <state width="569" height="428" key="GridCell.Tab.0.right/0.25.1920.989/1920.25.1680.1025@0.25.1920.989" timestamp="1623861010172" />
+    <state width="345" height="420" key="GridCell.Tab.0.right/0.25.1920.990/1920.25.1280.775@0.25.1920.990" timestamp="1623945431588" />
     <state x="105" y="25" key="SettingsEditor" timestamp="1623777711955">
       <screen x="0" y="25" width="1280" height="728" />
     </state>

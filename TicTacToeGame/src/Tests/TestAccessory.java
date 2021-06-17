@@ -1,8 +1,10 @@
-package com.MainPackage;
+package Tests;
+
+import com.MainPackage.Main;
 
 import java.util.function.Predicate;
 
-public class playerInput {
+public class TestAccessory {
 
     public boolean validatePlayerCoordinates (String playerCoordinates) {
         String[] possiblePlayerCoordinates = new String[9];
@@ -49,6 +51,30 @@ public class playerInput {
 
 
         return false;
+    }
+
+    public boolean validateCellStatus(int gameBoard) {
+        int numberOfGameBoardColumns = 3;
+        int numberOfGameBoardRows = 3;
+
+        boolean isValid = false;
+
+        for (int row = 0; row < numberOfGameBoardRows; ++row) {
+            for (int col = 0; col < numberOfGameBoardColumns; ++col) {
+                if (Main.gameBoard[row][col] == 0) {
+                    isValid = true;
+                }
+                else if (Main.gameBoard[row][col] == 1) {
+                    isValid = true;
+                }
+                else if (Main.gameBoard[row][col] == 3) {
+                    isValid = false;
+                }
+            }
+        }
+
+        return isValid;
+
     }
 
 

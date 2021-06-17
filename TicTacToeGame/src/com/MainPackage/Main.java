@@ -3,7 +3,7 @@ package com.MainPackage;
 
 import java.util.Scanner;
 
-public class Main {
+public class Main<getPrintedCell> {
     public static Scanner playerInput = new Scanner(System.in);
 
     private static int playerCount = 1;
@@ -132,6 +132,7 @@ public class Main {
             } break; //1
         }
     }
+
 
 
     public static boolean winConditions() {

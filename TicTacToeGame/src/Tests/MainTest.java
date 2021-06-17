@@ -1,21 +1,8 @@
 package Tests;
 
 import com.MainPackage.Main;
-import com.MainPackage.playerInput;
-import jdk.nashorn.internal.ir.LiteralNode;
-import org.hamcrest.CoreMatchers;
-import org.junit.Before;
-import org.junit.BeforeClass;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.CsvFileSource;
-
-import java.io.ByteArrayOutputStream;
-import java.io.PrintStream;
-import java.util.Scanner;
 
 import static org.junit.Assert.assertThat;
 import static org.junit.jupiter.api.Assertions.*;
@@ -23,12 +10,12 @@ import static org.junit.jupiter.api.Assumptions.assumeTrue;
 
 class MainTest {
 
-    private playerInput mockPlayer;
+    private TestAccessory mockPlayer;
     private Main mockGame;
 
     @BeforeEach
     void setUp() {
-        mockPlayer = new playerInput();
+        mockPlayer = new TestAccessory();
         mockGame = new Main();
     }
 
@@ -75,10 +62,15 @@ class MainTest {
 
     @Test
     void getCellStatus() {
+        int cellStatus = Main.getCellStatus(2, 2);
+        boolean isValid = mockPlayer.validateCellStatus(Main.gameBoard[1][2]);
+        assertTrue(isValid); //is a free space
+
     }
 
     @Test
     void printCell() {
+        int test = Main.getCellStatus(2, 2);
 
     }
 
