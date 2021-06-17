@@ -3,7 +3,7 @@ package com.MainPackage;
 
 import java.util.Scanner;
 
-public class Main<getPrintedCell> {
+public class Main {
     public static Scanner playerInput = new Scanner(System.in);
 
     private static int playerCount = 1;
@@ -23,6 +23,8 @@ public class Main<getPrintedCell> {
         printWelcomeBanner();
 
         runGame();
+
+        printGameBoard();
 
         printWinningBanner();
 
@@ -74,7 +76,7 @@ public class Main<getPrintedCell> {
             return true;
         }
         else {
-            System.out.println("This move at (" + (row + 1) + "," + (column + 1) + ") is taken.");
+            System.out.print("This move at (" + (row + 1) + "," + (column + 1) + ") is taken.\n");
         }
 
         return false;
@@ -112,6 +114,9 @@ public class Main<getPrintedCell> {
 
     public static int getCellStatus(int row, int column) {
         return gameBoard[row][column];
+    }
+    public static void setCellStatus(int row, int column, int player) {
+        gameBoard[row][column] = player;
     }
 
     public static void printCell(int player) {
@@ -198,22 +203,24 @@ public class Main<getPrintedCell> {
     }
 
     public static void printWelcomeBanner() {
-        System.out.println("Welcome to a game of Tic-Tac-Toe! (Player 1 is X, and Player 2 is O)");
+        System.out.print("Welcome to a game of Tic-Tac-Toe! (Player 1 is X, and Player 2 is O)\n");
 
     }
 
     public static void printWinningBanner() {
         if (winningPlayer == 1) {
-            printGameBoard();
-            System.out.println("Player 1 (X) has won! Congrats!");
+            System.out.print("Player 1 (X) has won! Congrats!\n");
         } else if (winningPlayer == 0) {
-            printGameBoard();
-            System.out.println("Player 2 (O) has won! Congrats!");
+            System.out.print("Player 2 (O) has won! Congrats!\n");
         } else if (winningPlayer == 3) {
-            printGameBoard();
-            System.out.println("It's a Draw!");
+            System.out.print("It's a Draw!\n");
         }
     }
+
+    public static void setWinningPlayer(int player) {
+        winningPlayer = player;
+    }
+
 
     public static void initializeGame() {
         System.out.println("Press \"ENTER\" to continue...");
@@ -228,11 +235,11 @@ public class Main<getPrintedCell> {
         String playerDirectionsString;
 
         if (currentPlayer == XCell) {
-            playerDirectionsString = "Player 1! Please enter the coordinate of your move (row[1-3] column[1-3]): ";
-            System.out.println(playerDirectionsString);
+            playerDirectionsString = "Player 1! Please enter the coordinate of your move (row[1-3] column[1-3]): \n";
+            System.out.print(playerDirectionsString);
         }
         else if (currentPlayer == OCell) {
-            playerDirectionsString = "Player 2! Please enter the coordinate of your move (row[1-3] column[1-3]): ";
+            playerDirectionsString = "Player 2! Please enter the coordinate of your move (row[1-3] column[1-3]): \n";
             System.out.println(playerDirectionsString);
         }
     }

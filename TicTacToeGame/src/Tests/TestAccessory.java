@@ -2,8 +2,6 @@ package Tests;
 
 import com.MainPackage.Main;
 
-import java.util.function.Predicate;
-
 public class TestAccessory {
 
     public boolean validatePlayerCoordinates (String playerCoordinates) {
@@ -53,29 +51,36 @@ public class TestAccessory {
         return false;
     }
 
-    public boolean validateCellStatus(int gameBoard) {
+    public String validatePrintedCell(int row, int column) {
         int numberOfGameBoardColumns = 3;
         int numberOfGameBoardRows = 3;
 
-        boolean isValid = false;
+        String printedCell = " ";
 
-        for (int row = 0; row < numberOfGameBoardRows; ++row) {
-            for (int col = 0; col < numberOfGameBoardColumns; ++col) {
-                if (Main.gameBoard[row][col] == 0) {
-                    isValid = true;
-                }
-                else if (Main.gameBoard[row][col] == 1) {
-                    isValid = true;
-                }
-                else if (Main.gameBoard[row][col] == 3) {
-                    isValid = false;
-                }
-            }
+        if (Main.gameBoard[row][column] == 0) {
+            printedCell = " O ";
+        }
+        else if (Main.gameBoard[row][column] == 1) {
+            printedCell = " X ";
+        }
+        else if (Main.gameBoard[row][column] == 3) {
+            printedCell = "   ";
         }
 
-        return isValid;
+        return printedCell;
+
+
+
 
     }
+
+    public void Point() {
+
+    }
+
+
+
+
 
 
 }
