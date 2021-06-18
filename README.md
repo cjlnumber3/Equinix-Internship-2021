@@ -1,3 +1,7 @@
 Equinix Internship 2021
 
-Update dates are day.month.year format
+Commit dates are day.month.year format
+
+Commit times are in 2400 format
+
+Details include what was changed
