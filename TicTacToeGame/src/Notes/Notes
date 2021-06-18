@@ -1,5 +1,5 @@
-//mockGameBoard[same][changes]; vert win
-//mockGameBoard[changes][same]; horiz win
+mockGameBoard[same][changes]; vert win
+mockGameBoard[changes][same]; horiz win
 
 will fail if the second parameter evaluates to false
 assertTrue("This will succeed.", true);
