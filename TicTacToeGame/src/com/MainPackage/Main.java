@@ -60,7 +60,17 @@ public class Main {
             validInput = validMovement(row, column, currentPlayer);
 
 
+
         } while (!validInput);
+    }
+
+    public static boolean getValidMovementReturnsTrueIfFree(int row, int column, int player) {
+        int emptyCell = 3;
+
+        if (gameBoard[row][column] != emptyCell) {
+            return false;
+        }
+        return true;
     }
 
     public static boolean validMovement(int row, int column, int currentPlayer) {

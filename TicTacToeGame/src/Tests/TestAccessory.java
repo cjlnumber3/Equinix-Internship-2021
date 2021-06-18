@@ -16,45 +16,22 @@ public class TestAccessory {
         possiblePlayerCoordinates[7] = "3 2";
         possiblePlayerCoordinates[8] = "3 3";
 
-        if (playerCoordinates.contains(possiblePlayerCoordinates[0])) {
+        if (playerCoordinates.contains(possiblePlayerCoordinates[0])
+                || playerCoordinates.contains(possiblePlayerCoordinates[1])
+                || playerCoordinates.contains(possiblePlayerCoordinates[2])
+                || playerCoordinates.contains(possiblePlayerCoordinates[3])
+                || playerCoordinates.contains(possiblePlayerCoordinates[4])
+                || playerCoordinates.contains(possiblePlayerCoordinates[5])
+                || playerCoordinates.contains(possiblePlayerCoordinates[6])
+                || playerCoordinates.contains(possiblePlayerCoordinates[7])
+                || playerCoordinates.contains(possiblePlayerCoordinates[8])) {
             return true;
         }
-        else if (playerCoordinates.contains(possiblePlayerCoordinates[1])) {
-            return true;
-        }
-        else if (playerCoordinates.contains(possiblePlayerCoordinates[2])) {
-            return true;
-        }
-        else if (playerCoordinates.contains(possiblePlayerCoordinates[3])) {
-            return true;
-        }
-        else if (playerCoordinates.contains(possiblePlayerCoordinates[4])) {
-            return true;
-        }
-        else if (playerCoordinates.contains(possiblePlayerCoordinates[5])) {
-            return true;
-        }
-        else if (playerCoordinates.contains(possiblePlayerCoordinates[6])) {
-            return true;
-        }
-        else if (playerCoordinates.contains(possiblePlayerCoordinates[7])) {
-            return true;
-        }
-        else if (playerCoordinates.contains(possiblePlayerCoordinates[8])) {
-            return true;
-        }
-        else if (!playerCoordinates.equals(playerCoordinates.toString())) {
-            return false;
-        }
-
 
         return false;
     }
 
     public String validatePrintedCell(int row, int column) {
-        int numberOfGameBoardColumns = 3;
-        int numberOfGameBoardRows = 3;
-
         String printedCell = " ";
 
         if (Main.gameBoard[row][column] == 0) {
@@ -73,14 +50,5 @@ public class TestAccessory {
 
 
     }
-
-    public void Point() {
-
-    }
-
-
-
-
-
 
 }

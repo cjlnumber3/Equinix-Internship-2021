@@ -9,7 +9,6 @@ import java.io.PrintStream;
 
 import static org.junit.Assert.assertThat;
 import static org.junit.jupiter.api.Assertions.*;
-import static org.junit.jupiter.api.Assumptions.assumeTrue;
 import static org.hamcrest.CoreMatchers.containsString;
 
 class MainTest {
@@ -29,19 +28,33 @@ class MainTest {
 
     }
 
-
 //======================================================================================================================
 
     @Test
     void playerMove() {
+        int row = 1; //0-2 as per array
+        int column = 1; //0-2 as per array
+        int player = 1; //0, 1 or 3 as per game instructions
+
+        PrintStream original = System.out;
+        ByteArrayOutputStream byteOutputOfPrintPlayerDirections = new ByteArrayOutputStream();
+        PrintStream byteOutputOfPrintPlayerDirectionsToPrintStream = new PrintStream(byteOutputOfPrintPlayerDirections);
+        System.setOut(byteOutputOfPrintPlayerDirectionsToPrintStream);
+
+        Main.setCellStatus(row, column, player);
+        boolean isValid = Main.getValidMovementReturnsTrueIfFree(row, column, player);
+        System.setOut(original);
+
+        byteOutputOfPrintPlayerDirectionsToPrintStream.flush();
+        assertFalse(isValid);
     }
 
 
     @Test
     void validMovementWhenTaken() {
-        int row = 1;
-        int column = 1;
-        int player = 1;
+        int row = 1; //0-2 as per array
+        int column = 1; //0-2 as per array
+        int player = 1; //0, 1 or 3 as per game instructions
         String cellStatusTaken = "This move at (" + (row + 1) + "," + (column + 1) + ") is taken.\n";
 
         PrintStream original = System.out;
@@ -64,9 +77,9 @@ class MainTest {
 
     @Test
     void validMovementWhenFree() {
-        int player = 1;
-        int column = 1;
-        int row = 1;
+        int player = 1; //0, 1 or 3 as per game instructions
+        int column = 1; //0-2 as per array
+        int row = 1; //0-2 as per array
 
         Main.setCellStatus(row, column, player);
         Main.validMovement(row, column, player);
@@ -210,12 +223,9 @@ class MainTest {
     public void winConditionsDiagonalLeft() {
         int winningPlayer = 1; // 0, 1 or 3 as per game
 
-
         Main.gameBoard[0][0] = winningPlayer;
         Main.gameBoard[1][1] = winningPlayer;
         Main.gameBoard[2][2] = winningPlayer;
-
-        boolean shouldBeTrue = Main.winConditions();
 
         assertEquals(Main.winningPlayer, winningPlayer);
 
@@ -225,12 +235,9 @@ class MainTest {
     public void winConditionsDiagonalRight() {
         int winningPlayer = 1; // 0, 1 or 3 as per game
 
-
         Main.gameBoard[2][0] = winningPlayer;
         Main.gameBoard[1][1] = winningPlayer;
         Main.gameBoard[0][2] = winningPlayer;
-
-        boolean shouldBeTrue = Main.winConditions();
 
         assertEquals(Main.winningPlayer, winningPlayer);
 
@@ -240,12 +247,9 @@ class MainTest {
     public void winConditionsHorizontalRow1() {
         int winningPlayer = 1; // 0, 1 or 3 as per game
 
-
         Main.gameBoard[0][0] = winningPlayer;
         Main.gameBoard[0][1] = winningPlayer;
         Main.gameBoard[0][2] = winningPlayer;
-
-        boolean shouldBeTrue = Main.winConditions();
 
         assertEquals(Main.winningPlayer, winningPlayer);
 
@@ -255,12 +259,9 @@ class MainTest {
     public void winConditionsHorizontalRow2() {
         int winningPlayer = 1; // 0, 1 or 3 as per game
 
-
         Main.gameBoard[1][0] = winningPlayer;
         Main.gameBoard[1][1] = winningPlayer;
         Main.gameBoard[1][2] = winningPlayer;
-
-        boolean shouldBeTrue = Main.winConditions();
 
         assertEquals(Main.winningPlayer, winningPlayer);
 
@@ -270,12 +271,9 @@ class MainTest {
     public void winConditionsHorizontalRow3() {
         int winningPlayer = 1; // 0, 1 or 3 as per game
 
-
         Main.gameBoard[2][0] = winningPlayer;
         Main.gameBoard[2][1] = winningPlayer;
         Main.gameBoard[2][2] = winningPlayer;
-
-        boolean shouldBeTrue = Main.winConditions();
 
         assertEquals(Main.winningPlayer, winningPlayer);
 
@@ -285,12 +283,9 @@ class MainTest {
     public void winConditionsVerticalColumn1() {
         int winningPlayer = 1; // 0, 1 or 3 as per game
 
-
         Main.gameBoard[0][0] = winningPlayer;
         Main.gameBoard[1][0] = winningPlayer;
         Main.gameBoard[2][0] = winningPlayer;
-
-        boolean shouldBeTrue = Main.winConditions();
 
         assertEquals(Main.winningPlayer, winningPlayer);
 
@@ -300,12 +295,9 @@ class MainTest {
     public void winConditionsVerticalColumn2() {
         int winningPlayer = 1; // 0, 1 or 3 as per game
 
-
         Main.gameBoard[0][1] = winningPlayer;
         Main.gameBoard[1][1] = winningPlayer;
         Main.gameBoard[2][1] = winningPlayer;
-
-        boolean shouldBeTrue = Main.winConditions();
 
         assertEquals(Main.winningPlayer, winningPlayer);
 
@@ -315,12 +307,9 @@ class MainTest {
     public void winConditionsVerticalColumn3() {
         int winningPlayer = 1; // 0, 1 or 3 as per game
 
-
         Main.gameBoard[0][2] = winningPlayer;
         Main.gameBoard[1][2] = winningPlayer;
         Main.gameBoard[2][2] = winningPlayer;
-
-        boolean shouldBeTrue = Main.winConditions();
 
         assertEquals(Main.winningPlayer, winningPlayer);
 
