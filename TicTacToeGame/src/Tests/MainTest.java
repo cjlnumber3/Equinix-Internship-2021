@@ -24,10 +24,9 @@ class MainTest {
     void validateInput() {
         String playerCoordinates = "1 1";
         boolean isValid = mockPlayer.validatePlayerCoordinates(playerCoordinates);
-        assertTrue(isValid);
 
+        assertTrue(isValid);
     }
-    
 
     @Test
     void playerMove() {
@@ -43,11 +42,10 @@ class MainTest {
         Main.setCellStatus(row, column, player);
         boolean isValid = Main.getValidMovementReturnsTrueIfFree(row, column, player);
         System.setOut(original);
-
         byteOutputOfPrintPlayerDirectionsToPrintStream.flush();
+
         assertFalse(isValid);
     }
-
 
     @Test
     void validMovementWhenTaken() {
@@ -69,9 +67,6 @@ class MainTest {
         byteOutputOfValidMovementToPrintStream.flush();
 
         assertEquals(notAValidMovementError, cellStatusTaken);
-
-
-
     }
 
     @Test
@@ -103,8 +98,6 @@ class MainTest {
         byteOutputOfPrintGameBoardToPrintStream.flush();
 
         assertThat(actualPrintedGameBoard, containsString(emptyGameBoard));
-
-
     }
 
     @Test
@@ -115,10 +108,8 @@ class MainTest {
 
         Main.clearGameBoard();
         int clearedCell = Main.getCellStatus(row,  column); //range of 0-2 in array
+
         assertEquals(emptyCell, clearedCell);
-
-
-
     }
 
     @Test
@@ -129,8 +120,8 @@ class MainTest {
 
         Main.setCellStatus(row, column, player);
         int cellStatus = Main.getCellStatus(row, column);
-        assertEquals(cellStatus, player); //is a free space
 
+        assertEquals(cellStatus, player); //is a free space
     }
 
     @Test
@@ -155,7 +146,6 @@ class MainTest {
         }
 
         assertTrue(isValid);
-
     }
 
 
@@ -170,10 +160,9 @@ class MainTest {
 
         Main.printWelcomeBanner();
         System.setOut(original);
-
         byteOutputOfPrintWelcomeBannerToPrintStream.flush();
-        assertEquals(welcomeBanner, byteOutputOfPrintWelcomeBanner.toString());
 
+        assertEquals(welcomeBanner, byteOutputOfPrintWelcomeBanner.toString());
     }
 
     @Test
@@ -191,12 +180,10 @@ class MainTest {
         Main.setWinningPlayer(winner);
         Main.printWinningBanner();
         System.setOut(original);
-
         byteOutputOfPrintWinningBannerToPrintStream.flush();
+
         assertEquals(drawBanner, byteOutputOfPrintWinningBanner.toString());
-
     }
-
 
     @Test
     void printPlayerDirections() {
@@ -211,11 +198,9 @@ class MainTest {
 
         Main.printPlayerDirections(player);
         System.setOut(original);
-
         byteOutputOfPrintPlayerDirectionsToPrintStream.flush();
+
         assertEquals(player1Directions, byteOutputOfPrintPlayerDirections.toString());
-
-
     }
 
     @Test
@@ -227,7 +212,6 @@ class MainTest {
         Main.gameBoard[2][2] = winningPlayer;
 
         assertEquals(Main.winningPlayer, winningPlayer);
-
     }
 
     @Test
@@ -239,7 +223,6 @@ class MainTest {
         Main.gameBoard[0][2] = winningPlayer;
 
         assertEquals(Main.winningPlayer, winningPlayer);
-
     }
 
     @Test
@@ -251,7 +234,6 @@ class MainTest {
         Main.gameBoard[0][2] = winningPlayer;
 
         assertEquals(Main.winningPlayer, winningPlayer);
-
     }
 
     @Test
@@ -263,7 +245,6 @@ class MainTest {
         Main.gameBoard[1][2] = winningPlayer;
 
         assertEquals(Main.winningPlayer, winningPlayer);
-
     }
 
     @Test
@@ -275,7 +256,6 @@ class MainTest {
         Main.gameBoard[2][2] = winningPlayer;
 
         assertEquals(Main.winningPlayer, winningPlayer);
-
     }
 
     @Test
@@ -287,7 +267,6 @@ class MainTest {
         Main.gameBoard[2][0] = winningPlayer;
 
         assertEquals(Main.winningPlayer, winningPlayer);
-
     }
 
     @Test
@@ -299,7 +278,6 @@ class MainTest {
         Main.gameBoard[2][1] = winningPlayer;
 
         assertEquals(Main.winningPlayer, winningPlayer);
-
     }
 
     @Test
@@ -311,7 +289,6 @@ class MainTest {
         Main.gameBoard[2][2] = winningPlayer;
 
         assertEquals(Main.winningPlayer, winningPlayer);
-
     }
 
 }

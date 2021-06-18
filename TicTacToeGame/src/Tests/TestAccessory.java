@@ -27,7 +27,6 @@ public class TestAccessory {
                 || playerCoordinates.contains(possiblePlayerCoordinates[8])) {
             return true;
         }
-
         return false;
     }
 
@@ -45,10 +44,6 @@ public class TestAccessory {
         }
 
         return printedCell;
-
-
-
-
     }
 
 }

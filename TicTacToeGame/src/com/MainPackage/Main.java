@@ -27,8 +27,6 @@ public class Main {
         printGameBoard();
 
         printWinningBanner();
-
-
     }
 
     public static void runGame() {
@@ -41,11 +39,7 @@ public class Main {
             playerCount++;
             printGameBoard();
             playerMove(playerCount % 2);
-
-
         } while (!winConditions());
-
-
     }
 
     public static void playerMove(int currentPlayer) {
@@ -58,9 +52,6 @@ public class Main {
             int column = playerInput.nextInt() - 1;
 
             validInput = validMovement(row, column, currentPlayer);
-
-
-
         } while (!validInput);
     }
 
@@ -125,6 +116,7 @@ public class Main {
     public static int getCellStatus(int row, int column) {
         return gameBoard[row][column];
     }
+
     public static void setCellStatus(int row, int column, int player) {
         gameBoard[row][column] = player;
     }
@@ -133,7 +125,6 @@ public class Main {
         final int emptyCell = 3;
         final int XCell = 1;
         final int OCell = 0;
-
 
         switch (player) {
             case emptyCell: {
@@ -208,13 +199,10 @@ public class Main {
         else {
             return false;
         }
-
-
     }
 
     public static void printWelcomeBanner() {
         System.out.print("Welcome to a game of Tic-Tac-Toe! (Player 1 is X, and Player 2 is O)\n");
-
     }
 
     public static void printWinningBanner() {
@@ -230,7 +218,6 @@ public class Main {
     public static void setWinningPlayer(int player) {
         winningPlayer = player;
     }
-
 
     public static void initializeGame() {
         System.out.println("Press \"ENTER\" to continue...");
