@@ -148,7 +148,7 @@ public class Main {
                 || gameBoard[1][0] == 1 && gameBoard[1][1] == 1 && gameBoard[1][2] == 1
                 || gameBoard[2][0] == 1 && gameBoard[2][1] == 1 && gameBoard[2][2] == 1) {
 
-            winningPlayer = 1;
+            setWinningPlayer(1);
             return true;
         }
         //vertical columns are true for X/1
@@ -156,14 +156,14 @@ public class Main {
                 || gameBoard[0][0] == 1 && gameBoard[1][0] == 1 && gameBoard[2][0] == 1
                 || gameBoard[0][2] == 1 && gameBoard[1][2] == 1 && gameBoard[2][2] == 1) {
 
-            winningPlayer = 1;
+            setWinningPlayer(1);
             return true;
         }
         //diagonal are true for X/1
         else if (gameBoard[0][0] == 1 && gameBoard[1][1] == 1 && gameBoard[2][2] == 1
                 || gameBoard[0][2] == 1 && gameBoard[1][1] == 1 && gameBoard[2][0] == 1) {
 
-            winningPlayer = 1;
+            setWinningPlayer(1);
             return true;
         }
         //horizontal rows are true for O/2
@@ -171,7 +171,7 @@ public class Main {
                 || gameBoard[1][0] == 0 && gameBoard[1][1] == 0 && gameBoard[1][2] == 0
                 || gameBoard[2][0] == 0 && gameBoard[2][1] == 0 && gameBoard[2][2] == 0) {
 
-            winningPlayer = 0;
+            setWinningPlayer(0);
             return true;
         }
         //vertical columns are true for O/2
@@ -179,21 +179,21 @@ public class Main {
                 || gameBoard[0][0] == 0 && gameBoard[1][0] == 0 && gameBoard[2][0] == 0
                 || gameBoard[0][2] == 0 && gameBoard[1][2] == 0 && gameBoard[2][2] == 0) {
 
-            winningPlayer = 0;
+            setWinningPlayer(0);
             return true;
         }
         //diagonal are true for O/2
         else if (gameBoard[0][0] == 0 && gameBoard[1][1] == 0 && gameBoard[2][2] == 0
                 || gameBoard[0][2] == 0 && gameBoard[1][1] == 0 && gameBoard[2][0] == 0) {
 
-            winningPlayer = 0;
+            setWinningPlayer(0);
             return true;
         }
         else if (gameBoard[0][0] != 3 && gameBoard[0][1] != 3 && gameBoard[0][2] != 3
                 && gameBoard[1][0] != 3 && gameBoard[1][1] != 3 && gameBoard[1][2] != 3
                 && gameBoard[2][0] != 3 && gameBoard[2][1] != 3 && gameBoard[2][2] != 3) {
 
-            winningPlayer = 3;
+            setWinningPlayer(3);
             return true;
         }
         else {

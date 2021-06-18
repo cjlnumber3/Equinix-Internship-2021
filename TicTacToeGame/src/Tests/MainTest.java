@@ -210,6 +210,7 @@ class MainTest {
         Main.gameBoard[0][0] = winningPlayer;
         Main.gameBoard[1][1] = winningPlayer;
         Main.gameBoard[2][2] = winningPlayer;
+        Main.winConditions();
 
         assertEquals(Main.winningPlayer, winningPlayer);
     }
@@ -221,6 +222,7 @@ class MainTest {
         Main.gameBoard[2][0] = winningPlayer;
         Main.gameBoard[1][1] = winningPlayer;
         Main.gameBoard[0][2] = winningPlayer;
+        Main.winConditions();
 
         assertEquals(Main.winningPlayer, winningPlayer);
     }
@@ -232,6 +234,7 @@ class MainTest {
         Main.gameBoard[0][0] = winningPlayer;
         Main.gameBoard[0][1] = winningPlayer;
         Main.gameBoard[0][2] = winningPlayer;
+        Main.winConditions();
 
         assertEquals(Main.winningPlayer, winningPlayer);
     }
@@ -243,6 +246,7 @@ class MainTest {
         Main.gameBoard[1][0] = winningPlayer;
         Main.gameBoard[1][1] = winningPlayer;
         Main.gameBoard[1][2] = winningPlayer;
+        Main.winConditions();
 
         assertEquals(Main.winningPlayer, winningPlayer);
     }
@@ -254,6 +258,7 @@ class MainTest {
         Main.gameBoard[2][0] = winningPlayer;
         Main.gameBoard[2][1] = winningPlayer;
         Main.gameBoard[2][2] = winningPlayer;
+        Main.winConditions();
 
         assertEquals(Main.winningPlayer, winningPlayer);
     }
@@ -265,6 +270,7 @@ class MainTest {
         Main.gameBoard[0][0] = winningPlayer;
         Main.gameBoard[1][0] = winningPlayer;
         Main.gameBoard[2][0] = winningPlayer;
+        Main.winConditions();
 
         assertEquals(Main.winningPlayer, winningPlayer);
     }
@@ -276,6 +282,7 @@ class MainTest {
         Main.gameBoard[0][1] = winningPlayer;
         Main.gameBoard[1][1] = winningPlayer;
         Main.gameBoard[2][1] = winningPlayer;
+        Main.winConditions();
 
         assertEquals(Main.winningPlayer, winningPlayer);
     }
@@ -287,6 +294,7 @@ class MainTest {
         Main.gameBoard[0][2] = winningPlayer;
         Main.gameBoard[1][2] = winningPlayer;
         Main.gameBoard[2][2] = winningPlayer;
+        Main.winConditions();
 
         assertEquals(Main.winningPlayer, winningPlayer);
     }
