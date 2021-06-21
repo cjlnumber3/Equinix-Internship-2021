@@ -1,6 +1,7 @@
 package com.MainPackage;
 
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Main {
@@ -47,9 +48,13 @@ public class Main {
         boolean validInput = false;
 
         do {
+
             printPlayerDirections(currentPlayer);
             int row = playerInput.nextInt() - 1;
             int column = playerInput.nextInt() - 1;
+
+            printPlayerDirections(currentPlayer);
+
 
             validInput = validMovement(row, column, currentPlayer);
         } while (!validInput);
@@ -61,7 +66,10 @@ public class Main {
         if (gameBoard[row][column] != emptyCell) {
             return false;
         }
+
         return true;
+
+
     }
 
     public static boolean validMovement(int row, int column, int currentPlayer) {
@@ -76,7 +84,7 @@ public class Main {
             gameBoard[row][column] = currentPlayer;
             return true;
         }
-        else {
+        else if (gameBoard[row][column] != 3) {
             System.out.print("This move at (" + (row + 1) + "," + (column + 1) + ") is taken.\n");
         }
 
