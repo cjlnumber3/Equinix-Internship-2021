@@ -21,14 +21,6 @@ class MainTest {
     }
 
     @Test
-    void validateInput() {
-        String playerCoordinates = "3 6";
-        boolean isValid = mockPlayer.validatePlayerCoordinates(playerCoordinates);
-
-        assertTrue(isValid);
-    }
-
-    @Test
     void playerMove() {
         int row = 1; //0-5 as per array
         int column = 1; //0-5 as per array
@@ -83,7 +75,18 @@ class MainTest {
 
     @Test
     void printGameBoard() {
-        String emptyGameBoard = "   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   \n-----------------------------------------------------------------------------------------------\n   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   \n-----------------------------------------------------------------------------------------------\n   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   ";
+        PrintStream emptyGameBoard = System.out;
+        ByteArrayOutputStream byteOutputOfEmptyGameBoard = new ByteArrayOutputStream();
+        PrintStream byteOutputOfEmptyGameBoardToPrintStream = new PrintStream(byteOutputOfEmptyGameBoard);
+        System.setOut(byteOutputOfEmptyGameBoardToPrintStream);
+
+        Main.clearGameBoard();
+        Main.printGameBoard();
+        System.setOut(emptyGameBoard);
+
+        String emptyPrintedGameBoard = byteOutputOfEmptyGameBoard.toString();
+        byteOutputOfEmptyGameBoardToPrintStream.flush();
+
 
         PrintStream original = System.out;
         ByteArrayOutputStream byteOutputOfPrintGameBoard = new ByteArrayOutputStream();
@@ -97,7 +100,7 @@ class MainTest {
         String actualPrintedGameBoard = byteOutputOfPrintGameBoard.toString();
         byteOutputOfPrintGameBoardToPrintStream.flush();
 
-        assertThat(actualPrintedGameBoard, containsString(emptyGameBoard));
+        assertThat(actualPrintedGameBoard, containsString(emptyPrintedGameBoard));
     }
 
     @Test
@@ -299,5 +302,5 @@ class MainTest {
 
         assertEquals(Main.winningPlayer, winningPlayer);
     }
-    
+
 }
