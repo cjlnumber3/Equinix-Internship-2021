@@ -83,7 +83,7 @@ class MainTest {
 
     @Test
     void printGameBoard() {
-        String emptyGameBoard = "   |   |   |   |   |   \n-----------------------\n   |   |   |   |   |   \n-----------------------\n   |   |   |   |   |   ";
+        String emptyGameBoard = "   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   \n-----------------------------------------------------------------------------------------------\n   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   \n-----------------------------------------------------------------------------------------------\n   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   ";
 
         PrintStream original = System.out;
         ByteArrayOutputStream byteOutputOfPrintGameBoard = new ByteArrayOutputStream();
@@ -186,8 +186,8 @@ class MainTest {
 
     @Test
     void printPlayerDirections() {
-        String player1Directions = "Player 1! Please enter the coordinate of your move (row[1-6] column[1-6]): \n";
-        String player2Directions = "Player 2! Please enter the coordinate of your move (row[1-6] column[1-6]): \n";
+        String player1Directions = "Player 1! Please enter the coordinate of your move (row[1-24] column[1-24]): \n";
+        String player2Directions = "Player 2! Please enter the coordinate of your move (row[1-24] column[1-24]): \n";
         int player = 1; //0, 1 or 3 as per game instructions
 
         PrintStream original = System.out;
@@ -203,40 +203,80 @@ class MainTest {
     }
 
     @Test
-    public void winConditionsDiagonalLeft() {
-        int winningPlayer = 1; // 0, 1 or 3 as per game
+    public void drawGame() {
+        int numberOfGameBoardRows = 24;
+        int numberOfGameBoardColumns = 24;
 
-        Main.gameBoard[0][0] = winningPlayer;
-        Main.gameBoard[1][1] = winningPlayer;
-        Main.gameBoard[2][2] = winningPlayer;
-        Main.gameBoard[3][3] = winningPlayer;
-        Main.gameBoard[4][4] = winningPlayer;
-        Main.gameBoard[5][5] = winningPlayer;
+        for (int row = 0; row < numberOfGameBoardRows; row++) {
+            for (int column = 0; column < 24; column++) {
+                Main.gameBoard[row][column] = (row + column) % 2 == 0 ? 7 : 5;
+            }
+        }
+
         Main.winConditions();
 
-        assertEquals(Main.winningPlayer, winningPlayer);
+        assertEquals(Main.winningPlayer, 3);
+    }
+
+    @Test
+    public void gameBoardIsFull() {
+        int numberOfGameBoardRows = 24;
+        int numberOfGameBoardColumns = 24;
+        int somePlayer = 1;
+        for (int row = 0; row < numberOfGameBoardRows; ++row) {
+            for (int column = 0; column < numberOfGameBoardColumns; ++column) {
+                Main.gameBoard[row][column] = somePlayer;
+            }
+        }
+
+        boolean isFullShouldReturnTrue = Main.gameBoardIsFull();
+
+        assertTrue(isFullShouldReturnTrue);
     }
 
     @Test
     public void winConditionsDiagonalRight() {
         int winningPlayer = 1; // 0, 1 or 3 as per game
+        int numberOfGameBoardRows = 24;
+        int numberOfGameBoardColumns = 24;
 
-        Main.gameBoard[0][5] = winningPlayer;
-        Main.gameBoard[1][4] = winningPlayer;
-        Main.gameBoard[2][3] = winningPlayer;
-        Main.gameBoard[3][2] = winningPlayer;
-        Main.gameBoard[4][1] = winningPlayer;
-        Main.gameBoard[5][0] = winningPlayer;
+        for (int row = 0; row < numberOfGameBoardRows; ++row) {
+            for (int column = 0; column < numberOfGameBoardColumns; ++column) {
+                for (int i = row; i < numberOfGameBoardRows; i++) {
+                    Main.gameBoard[i][i] = winningPlayer;
+                }
+            }
+        }
+
         Main.winConditions();
 
         assertEquals(Main.winningPlayer, winningPlayer);
     }
 
     @Test
-    public void winConditionsHorizontalRow1() {
+    public void winConditionsDiagonalLeft() {
+        int winningPlayer = 1; // 0, 1 or 3 as per game
+        int numberOfGameBoardRows = 24;
+        int numberOfGameBoardColumns = 24;
+
+        for (int row = 0; row < numberOfGameBoardRows; ++row) {
+            for (int column = 0; column < numberOfGameBoardColumns; ++column) {
+                for (int i = row; i < numberOfGameBoardRows; i++) {
+                    Main.gameBoard[i][numberOfGameBoardRows - 1 - i] = winningPlayer;
+                }
+            }
+        }
+
+        Main.winConditions();
+
+        assertEquals(Main.winningPlayer, winningPlayer);
+    }
+
+    @Test
+    public void winConditionsHorizontalRow() {
         int winningPlayer = 1; // 0, 1 or 3 as per game
 
-        int numberOfGameBoardColumns = 6;
+        int numberOfGameBoardColumns = 24;
 
         for (int column = 0; column < numberOfGameBoardColumns; ++column) {
             Main.gameBoard[0][column] = winningPlayer;
@@ -247,80 +287,10 @@ class MainTest {
     }
 
     @Test
-    public void winConditionsHorizontalRow2() {
+    public void winConditionsVerticalColumn() {
         int winningPlayer = 1; // 0, 1 or 3 as per game
 
-        int numberOfGameBoardColumns = 6;
-
-        for (int column = 0; column < numberOfGameBoardColumns; ++column) {
-            Main.gameBoard[1][column] = winningPlayer;
-        }
-        Main.winConditions();
-
-        assertEquals(Main.winningPlayer, winningPlayer);
-    }
-
-    @Test
-    public void winConditionsHorizontalRow3() {
-        int winningPlayer = 1; // 0, 1 or 3 as per game
-
-        int numberOfGameBoardColumns = 6;
-
-        for (int column = 0; column < numberOfGameBoardColumns; ++column) {
-            Main.gameBoard[2][column] = winningPlayer;
-        }
-        Main.winConditions();
-
-        assertEquals(Main.winningPlayer, winningPlayer);
-    }
-
-    @Test
-    public void winConditionsHorizontalRow4() {
-        int winningPlayer = 1; // 0, 1 or 3 as per game
-
-        int numberOfGameBoardColumns = 6;
-
-        for (int column = 0; column < numberOfGameBoardColumns; ++column) {
-            Main.gameBoard[3][column] = winningPlayer;
-        }
-        Main.winConditions();
-
-        assertEquals(Main.winningPlayer, winningPlayer);
-    }
-
-    @Test
-    public void winConditionsHorizontalRow5() {
-        int winningPlayer = 1; // 0, 1 or 3 as per game
-
-        int numberOfGameBoardColumns = 6;
-
-        for (int column = 0; column < numberOfGameBoardColumns; ++column) {
-            Main.gameBoard[4][column] = winningPlayer;
-        }
-        Main.winConditions();
-
-        assertEquals(Main.winningPlayer, winningPlayer);
-    }
-
-    @Test
-    public void winConditionsHorizontalRow6() {
-        int winningPlayer = 1; // 0, 1 or 3 as per game
-
-        int numberOfGameBoardColumns = 6;
-
-        for (int column = 0; column < numberOfGameBoardColumns; ++column) {
-            Main.gameBoard[5][column] = winningPlayer;
-        }
-        Main.winConditions();
-
-        assertEquals(Main.winningPlayer, winningPlayer);
-    }
-
-    @Test
-    public void winConditionsVerticalColumn1() {
-        int winningPlayer = 1; // 0, 1 or 3 as per game
-
-        int numberOfGameBoardRows = 6;
+        int numberOfGameBoardRows = 24;
 
         for (int row = 0; row < numberOfGameBoardRows; ++row) {
             Main.gameBoard[row][0] = winningPlayer;
@@ -329,75 +299,5 @@ class MainTest {
 
         assertEquals(Main.winningPlayer, winningPlayer);
     }
-
-    @Test
-    public void winConditionsVerticalColumn2() {
-        int winningPlayer = 1; // 0, 1 or 3 as per game
-
-        int numberOfGameBoardRows = 6;
-
-        for (int row = 0; row < numberOfGameBoardRows; ++row) {
-            Main.gameBoard[row][1] = winningPlayer;
-        }
-        Main.winConditions();
-
-        assertEquals(Main.winningPlayer, winningPlayer);
-    }
-
-    @Test
-    public void winConditionsVerticalColumn3() {
-        int winningPlayer = 1; // 0, 1 or 3 as per game
-
-        int numberOfGameBoardRows = 6;
-
-        for (int row = 0; row < numberOfGameBoardRows; ++row) {
-            Main.gameBoard[row][2] = winningPlayer;
-        }
-        Main.winConditions();
-
-        assertEquals(Main.winningPlayer, winningPlayer);
-    }
-
-    @Test
-    public void winConditionsVerticalColumn4() {
-        int winningPlayer = 1; // 0, 1 or 3 as per game
-
-        int numberOfGameBoardRows = 6;
-
-        for (int row = 0; row < numberOfGameBoardRows; ++row) {
-            Main.gameBoard[row][3] = winningPlayer;
-        }
-        Main.winConditions();
-
-        assertEquals(Main.winningPlayer, winningPlayer);
-    }
-
-    @Test
-    public void winConditionsVerticalColumn5() {
-        int winningPlayer = 1; // 0, 1 or 3 as per game
-
-        int numberOfGameBoardRows = 6;
-
-        for (int row = 0; row < numberOfGameBoardRows; ++row) {
-            Main.gameBoard[row][4] = winningPlayer;
-        }
-        Main.winConditions();
-
-        assertEquals(Main.winningPlayer, winningPlayer);
-    }
-
-    @Test
-    public void winConditionsVerticalColumn6() {
-        int winningPlayer = 1; // 0, 1 or 3 as per game
-
-        int numberOfGameBoardRows = 6;
-
-        for (int row = 0; row < numberOfGameBoardRows; ++row) {
-            Main.gameBoard[row][5] = winningPlayer;
-        }
-        Main.winConditions();
-
-        assertEquals(Main.winningPlayer, winningPlayer);
-    }
-
+    
 }

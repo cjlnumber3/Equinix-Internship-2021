@@ -8,3 +8,131 @@ assertTrue("This will fail!", false);
 will fail if the second parameter evaluates to true
 assertFalse("This will succeed.", false);
 assertFalse("This will fail!", true);
+==================================================================================
+
+public static void winningPieces(int[][] winConditions) {
+
+    }
+
+    public static int[][] winningPieces(String nameOfWin, int winningPlayer) {
+        int numberOfGameBoardColumns = 6;
+        int numberOfGameBoardRows = 6;
+
+        int[][] HorizontalRow1Win = new int[6][6];
+        int[][] HorizontalRow2Win = new int[6][6];
+        int[][] HorizontalRow3Win = new int[6][6];
+        int[][] HorizontalRow4Win = new int[6][6];
+        int[][] HorizontalRow5Win = new int[6][6];
+        int[][] HorizontalRow6Win = new int[6][6];
+
+        int[][] VerticalColumn1Win = new int[6][6];
+        int[][] VerticalColumn2Win = new int[6][6];
+        int[][] VerticalColumn3Win = new int[6][6];
+        int[][] VerticalColumn4Win = new int[6][6];
+        int[][] VerticalColumn5Win = new int[6][6];
+        int[][] VerticalColumn6Win = new int[6][6];
+
+        int[][] DiagonalLeftWin = new int[6][6];
+
+        DiagonalLeftWin[0][0] = winningPlayer;
+        DiagonalLeftWin[1][1] = winningPlayer;
+        DiagonalLeftWin[2][2] = winningPlayer;
+        DiagonalLeftWin[3][3] = winningPlayer;
+        DiagonalLeftWin[4][4] = winningPlayer;
+        DiagonalLeftWin[5][5] = winningPlayer;
+
+        int[][] DiagonalRightWin = new int[6][6];
+
+        DiagonalRightWin[0][5] = winningPlayer;
+        DiagonalRightWin[1][4] = winningPlayer;
+        DiagonalRightWin[2][3] = winningPlayer;
+        DiagonalRightWin[3][2] = winningPlayer;
+        DiagonalRightWin[4][1] = winningPlayer;
+        DiagonalRightWin[5][0] = winningPlayer;
+
+
+        for (int column = 0; column < numberOfGameBoardColumns; ++column) {
+            HorizontalRow1Win[0][column] = winningPlayer;
+        }
+        for (int column = 0; column < numberOfGameBoardColumns; ++column) {
+            HorizontalRow2Win[1][column] = winningPlayer;
+        }
+        for (int column = 0; column < numberOfGameBoardColumns; ++column) {
+            HorizontalRow3Win[2][column] = winningPlayer;
+        }
+        for (int column = 0; column < numberOfGameBoardColumns; ++column) {
+            HorizontalRow4Win[3][column] = winningPlayer;
+        }
+        for (int column = 0; column < numberOfGameBoardColumns; ++column) {
+            HorizontalRow5Win[4][column] = winningPlayer;
+        }
+        for (int column = 0; column < numberOfGameBoardColumns; ++column) {
+            HorizontalRow6Win[5][column] = winningPlayer;
+        }
+
+        for (int row = 0; row < numberOfGameBoardRows; ++row) {
+            VerticalColumn1Win[row][0] = winningPlayer;
+        }
+        for (int row = 0; row < numberOfGameBoardRows; ++row) {
+            VerticalColumn2Win[row][1] = winningPlayer;
+        }
+        for (int row = 0; row < numberOfGameBoardRows; ++row) {
+            VerticalColumn3Win[row][2] = winningPlayer;
+        }
+        for (int row = 0; row < numberOfGameBoardRows; ++row) {
+            VerticalColumn4Win[row][3] = winningPlayer;
+        }
+        for (int row = 0; row < numberOfGameBoardRows; ++row) {
+            VerticalColumn5Win[row][4] = winningPlayer;
+        }
+        for (int row = 0; row < numberOfGameBoardRows; ++row) {
+            VerticalColumn6Win[row][5] = winningPlayer;
+        }
+
+        if(nameOfWin.equals("HorizontalRow1Win")) {
+            return HorizontalRow1Win;
+        }
+        else if(nameOfWin.equals("HorizontalRow2Win")) {
+            return HorizontalRow2Win;
+        }
+        else if(nameOfWin.equals("HorizontalRow3Win")) {
+            return HorizontalRow3Win;
+        }
+        else if(nameOfWin.equals("HorizontalRow4Win")) {
+            return HorizontalRow4Win;
+        }
+        else if(nameOfWin.equals("HorizontalRow5Win")) {
+            return HorizontalRow5Win;
+        }
+        else if(nameOfWin.equals("HorizontalRow6Win")) {
+            return HorizontalRow6Win;
+        }
+        else if(nameOfWin.equals("VerticalColumn1Win")) {
+            return VerticalColumn1Win;
+        }
+        else if(nameOfWin.equals("VerticalColumn2Win")) {
+            return VerticalColumn2Win;
+        }
+        else if(nameOfWin.equals("VerticalColumn3Win")) {
+            return VerticalColumn3Win;
+        }
+        else if(nameOfWin.equals("VerticalColumn4Win")) {
+            return VerticalColumn4Win;
+        }
+        else if(nameOfWin.equals("VerticalColumn5Win")) {
+            return VerticalColumn5Win;
+        }
+        else if(nameOfWin.equals("VerticalColumn6Win")) {
+            return VerticalColumn6Win;
+        }
+        else if(nameOfWin.equals("DiagonalRightWin")) {
+            return DiagonalRightWin;
+        }
+        else {
+            return DiagonalLeftWin;
+        }
+
+
+
+
+    }

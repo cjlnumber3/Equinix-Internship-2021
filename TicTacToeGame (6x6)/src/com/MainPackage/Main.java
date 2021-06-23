@@ -1,7 +1,6 @@
 package com.MainPackage;
 
 
-import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Main {
@@ -9,12 +8,9 @@ public class Main {
 
     private static int playerCount = 1;
 
-
     public static int[][] gameBoard = new int[6][6];
 
-
     public static int winningPlayer;
-
 
 
     public static void main(String[] args) {
@@ -68,8 +64,6 @@ public class Main {
         }
 
         return true;
-
-
     }
 
     public static boolean validMovement(int row, int column, int currentPlayer) {
@@ -146,8 +140,6 @@ public class Main {
             } break; //1
         }
     }
-
-
 
     public static boolean winConditions() {
 
