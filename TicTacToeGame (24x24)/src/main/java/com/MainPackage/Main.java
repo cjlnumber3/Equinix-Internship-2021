@@ -47,9 +47,6 @@ public class Main {
             int row = playerInput.nextInt() - 1;
             int column = playerInput.nextInt() - 1;
 
-            printPlayerDirections(currentPlayer);
-
-
             validInput = validMovement(row, column, currentPlayer);
         } while (!validInput);
     }
@@ -175,57 +172,53 @@ public class Main {
         }
         else if (currentPlayer == OCell) {
             playerDirectionsString = "Player 2! Please enter the coordinate of your move (row[1-24] column[1-24]): \n";
-            System.out.println(playerDirectionsString);
+            System.out.print(playerDirectionsString);
         }
     }
 
     public static boolean winConditions() {
-        if (gameBoardIsFull() && horizontalWinPlayer1()) {
-            return true;
+
+        if (gameBoardIsFull()) {
+            if (horizontalWinPlayer1()) {
+                return true;
+            }
+            if (horizontalWinPlayer2()) {
+                return true;
+            }
+            if (verticalWinPlayer1()) {
+                return true;
+            }
+            if (verticalWinPlayer2()) {
+                return true;
+            }
+            if (diagonalWinLeftPlayer1()) {
+                return true;
+            }
+            if (diagonalWinRightPlayer1()) {
+                return true;
+            }
+            if (diagonalWinLeftPlayer2()) {
+                return true;
+            }
+            if (diagonalWinRightPlayer2()) {
+                return true;
+            }
+            if (drawGame()) {
+                return true;
+            }
         }
-        else if (gameBoardIsFull() && horizontalWinPlayer2()) {
-            setWinningPlayer(5);
-            return true;
-        }
-        else if (gameBoardIsFull() && verticalWinPlayer1()) {
-            return true;
-        }
-        else if (gameBoardIsFull() && verticalWinPlayer2()) {
-            return true;
-        }
-        else if (gameBoardIsFull() && diagonalWinLeftPlayer1()) {
-            return true;
-        }
-        else if (gameBoardIsFull() && diagonalWinRightPlayer1()) {
-            return true;
-        }
-        else if (gameBoardIsFull() && diagonalWinLeftPlayer2()) {
-            return true;
-        }
-        else if (gameBoardIsFull() && diagonalWinRightPlayer2()) {
-            return true;
-        }
-        else if (gameBoardIsFull() && drawGame()) {
-            return true;
-        }
-        else {
-            return false;
-        }
+        return false;
     }
 
     public static boolean gameBoardIsFull() {
-        int numberOfGameBoardRows = 24;
-        int numberOfGameBoardColumns = 24;
-
-        for (int row = 0; row < numberOfGameBoardRows; ++row) {
-            for (int column = 0; column < numberOfGameBoardColumns; ++column) {
-                if (gameBoard[row][column] != 3) {
-                    return true;
+        for(int i = 0; i < gameBoard.length; i++) {
+            for(int j = 0; j < gameBoard[i].length; j++) {
+                if(gameBoard[i][j] == 3) {
+                    return false;
                 }
             }
         }
-
-        return false;
+        return true;
     }
 
     public static boolean horizontalWinPlayer1() {
@@ -433,10 +426,6 @@ public class Main {
     }
 
     public static boolean drawGame() {
-        int numberOfGameBoardRows = 24;
-        int numberOfGameBoardColumns = 24;
-        int numberToWin = 24;
-
         if (gameBoardIsFull()
                 && !horizontalWinPlayer1() && !horizontalWinPlayer2()
                 && !verticalWinPlayer1() && !verticalWinPlayer2()
@@ -448,6 +437,40 @@ public class Main {
 
         return false;
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 }
 
